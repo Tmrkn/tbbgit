@@ -1,0 +1,364 @@
+PS C:\Users\Tmrkn> cd "D:\Temp\TBB Git Course"
+
+PS D:\Temp\TBB Git Course> git --version
+git version 2.37.2.windows.2
+
+PS D:\Temp\TBB Git Course> git config --global --list
+fatal: unable to read config file 'C:/Users/Tmrkn/.gitconfig': No such file or directory
+
+PS D:\Temp\TBB Git Course> git config --global user.name "Tümerkan Tekdamar"
+PS D:\Temp\TBB Git Course> git config --global user.email "tumerkantekdamar@gmail.com"
+
+PS D:\Temp\TBB Git Course> git config --global --list
+user.name=Tümerkan Tekdamar
+user.email=tumerkantekdamar@gmail.com
+
+PS D:\Temp\TBB Git Course> git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor="C:\\Program Files\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Tümerkan Tekdamar
+user.email=tumerkantekdamar@gmail.com
+
+
+PS D:\Temp\TBB Git Course> git init
+Initialized empty Git repository in D:/Temp/TBB Git Course/.git/
+
+PS D:\Temp\TBB Git Course> ls
+PS D:\Temp\TBB Git Course> ls -hidden
+
+
+    Directory: D:\Temp\TBB Git Course
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h--        18.08.2022     14:02                .git
+
+
+PS D:\Temp\TBB Git Course> code .
+
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+PS D:\Temp\TBB Git Course> git add .\index.html
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+PS D:\Temp\TBB Git Course> git rm --cached .\index.html
+rm 'index.html'
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS D:\Temp\TBB Git Course> git add .\index.html -v
+add 'index.html'
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+PS D:\Temp\TBB Git Course> git commit -m 'Index eklendi.' -v
+[master (root-commit) dc36bc4] Index eklendi.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+nothing to commit, working tree clean
+
+
+PS D:\Temp\TBB Git Course> git log
+commit dc36bc4fe0d1b648ead815dcebfa72f751c4cc32 (HEAD -> master)
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:10:36 2022 +0300
+
+    Index eklendi.
+
+
+PS D:\Temp\TBB Git Course> git add .\style.css
+PS D:\Temp\TBB Git Course> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   style.css
+
+PS D:\Temp\TBB Git Course> git status -s
+A  style.css
+
+
+PS D:\Temp\TBB Git Course> git commit -m 'Style dosyası eklendi.'
+[master dbfc113] Style dosyası eklendi.
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 style.css
+
+
+PS D:\Temp\TBB Git Course> git status -s
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+nothing to commit, working tree clean
+
+
+PS D:\Temp\TBB Git Course> git log
+commit dbfc113011da65ad3395aff8860ea2375ed4227d (HEAD -> master)
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:13:56 2022 +0300
+
+    Style dosyası eklendi.
+
+commit dc36bc4fe0d1b648ead815dcebfa72f751c4cc32
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:10:36 2022 +0300
+
+    Index eklendi.
+
+
+PS D:\Temp\TBB Git Course> git add .\style1.css
+PS D:\Temp\TBB Git Course> git add .\categories.html
+
+
+PS D:\Temp\TBB Git Course> git commit -m 'Style1 ve categories dosyaları eklendi.'
+[master c8c7de5] Style1 ve categories dosyaları eklendi.
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 categories.html
+ create mode 100644 style1.css
+ 
+
+PS D:\Temp\TBB Git Course> git log
+commit c8c7de5004f8e3b7372c6c3dd72b532862ad844d (HEAD -> master)
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:17:53 2022 +0300
+
+    Style1 ve categories dosyaları eklendi.
+
+commit dbfc113011da65ad3395aff8860ea2375ed4227d
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:13:56 2022 +0300
+
+    Style dosyası eklendi.
+
+commit dc36bc4fe0d1b648ead815dcebfa72f751c4cc32
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:10:36 2022 +0300
+
+    Index eklendi.
+
+
+PS D:\Temp\TBB Git Course> git log --oneline
+c8c7de5 (HEAD -> master) Style1 ve categories dosyaları eklendi.
+dbfc113 Style dosyası eklendi.
+dc36bc4 Index eklendi.
+
+PS D:\Temp\TBB Git Course> git log --oneline -n 2
+c8c7de5 (HEAD -> master) Style1 ve categories dosyaları eklendi.
+dbfc113 Style dosyası eklendi.
+
+
+PS D:\Temp\TBB Git Course> git diff
+diff --git a/index.html b/index.html
+index e69de29..9f8ebbf 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <title>
++        Demo
++    </title>
++    <body>
++        Naber?
++    </body>
++</html>
+\ No newline at end of file
+
+
+PS D:\Temp\TBB Git Course> git diff .\index.html
+diff --git a/index.html b/index.html
+index e69de29..9f8ebbf 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <title>
++        Demo
++    </title>
++    <body>
++        Naber?
++    </body>
++</html>
+\ No newline at end of file
+
+
+# tüm dosyaları eklemek için . kullanıyoruz
+PS D:\Temp\TBB Git Course> git add . -v
+add 'index.html'
+
+PS D:\Temp\TBB Git Course> git commit -m 'index dosyası düzenlendi. html tag eklendi.'
+[master f92bcf3] index dosyası düzenlendi. html tag eklendi.
+ 1 file changed, 8 insertions(+)
+
+
+PS D:\Temp\TBB Git Course> git log
+commit f92bcf37b78e700017770c7b7e4f28c878165808 (HEAD -> master)
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:34:17 2022 +0300
+
+    index dosyası düzenlendi. html tag eklendi.
+
+commit c8c7de5004f8e3b7372c6c3dd72b532862ad844d
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:17:53 2022 +0300
+
+    Style1 ve categories dosyaları eklendi.
+
+commit dbfc113011da65ad3395aff8860ea2375ed4227d
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:13:56 2022 +0300
+
+    Style dosyası eklendi.
+
+commit dc36bc4fe0d1b648ead815dcebfa72f751c4cc32
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:10:36 2022 +0300
+
+    Index eklendi.
+
+
+# index değişikliği ve geri dönüş
+PS D:\Temp\TBB Git Course> git diff
+diff --git a/index.html b/index.html
+index 9f8ebbf..4ed7c41 100644
+--- a/index.html
++++ b/index.html
+@@ -3,6 +3,6 @@
+         Demo
+     </title>
+     <body>
+-        Naber?
++        Test
+     </body>
+ </html>
+\ No newline at end of file
+
+PS D:\Temp\TBB Git Course> git add .\index.html
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS D:\Temp\TBB Git Course> git commit -m 'index dosyası değiştirildi.'
+[master 9954fe3] index dosyası değiştirildi.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+
+PS D:\Temp\TBB Git Course> git diff
+PS D:\Temp\TBB Git Course> git status
+On branch master
+nothing to commit, working tree clean
+
+PS D:\Temp\TBB Git Course> git log
+commit 9954fe3a552c6afe89151fd79ca8b9bc500004e2 (HEAD -> master)
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 15:09:31 2022 +0300
+
+    index dosyası değiştirildi.
+
+commit f92bcf37b78e700017770c7b7e4f28c878165808
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:34:17 2022 +0300
+
+    index dosyası düzenlendi. html tag eklendi.
+
+commit c8c7de5004f8e3b7372c6c3dd72b532862ad844d
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:17:53 2022 +0300
+
+    Style1 ve categories dosyaları eklendi.
+
+commit dbfc113011da65ad3395aff8860ea2375ed4227d
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:13:56 2022 +0300
+
+    Style dosyası eklendi.
+
+commit dc36bc4fe0d1b648ead815dcebfa72f751c4cc32
+Author: Tümerkan Tekdamar <tumerkantekdamar@gmail.com>
+Date:   Thu Aug 18 14:10:36 2022 +0300
+
+    Index eklendi.
+
+# soft geçişte visual code alanında değişiklik geri alınmaz hard geçişte direk yedeğe dönülür.
+PS D:\Temp\TBB Git Course> git reset f92bcf37b78e700017770c7b7e4f28c878165808 --soft
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+PS D:\Temp\TBB Git Course> git restore --staged .\index.html
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+PS D:\Temp\TBB Git Course> git restore .\index.html
+
+PS D:\Temp\TBB Git Course> git status
+On branch master
+nothing to commit, working tree clean
+
+
+
+
+
+
+
